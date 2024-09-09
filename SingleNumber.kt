@@ -6,14 +6,17 @@ fun main (){
 }
 
 fun singleNumber(nums: IntArray):Int {
-    val map = HashMap<Int, Int> ()
+
+    var set = HashSet<Int>()
+    var j = 0
+    var k = 0
+
     for (i in nums) {
-        map.put(i, map.getOrDefault(i, 0) + 1)
+        if (!set.contains(i)) {
+            set.add(i)
+            j += i
+        }
+        k += i
     } 
-    for (i in nums) {
-        if (map.get(i) == 1) {
-            return i
-        }    
-    }
-    return 0
+    return 2 * j -k
 }
