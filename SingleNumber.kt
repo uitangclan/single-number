@@ -11,7 +11,6 @@ fun singleNumber(nums: IntArray):Int {
     var a = 0
     for (i in nums) {
         a = a xor i
-        println(a)
     } 
     return a
 }
